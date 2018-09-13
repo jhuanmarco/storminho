@@ -1,0 +1,6 @@
+"ARFF TRAINING","PRECISION","RECALL","F1","VP","VN","FP","FN","IGNORED FIELDS","CLASS","SVM-TYPE","KERNEL","C","DEGREE","GAMMA"
+"1_dados10k-1-1-1_SIZE-11000_TD-1000_SS-0.3_TP-416180.arff","1.0","1.0","1.0","1000","415180","0","0"," 15 ","SVM","C_SVC","POLYNOMIAL ","Default(0)","Default(3)","Default(1/n)",,,,
+"2_dados10k-1-1-1_SIZE-11000_TD-1000_SS-0.3_TP-416180.arff","0.21570748593682387","0.997","0.3546780505158306","997","411555","3625","3"," 15 ","J48",,,,,,,,,
+"2_dados10k-1-1-1_SIZE-11000_TD-1000_SS-0.3_TP-416180.arff","1.0","1.0","1.0","1000","415180","0","0"," 15 ","SVM","C_SVC","POLYNOMIAL ","Default(0)","Default(3)","Default(1/n)",,,,
+"3_dados10k-1-1-1_SIZE-11000_TD-1000_SS-0.3_TP-416180.arff","0.3303512259774685","0.997","0.4962667994026879","997","413159","2021","3"," 15 ","J48",,,,,,,,,
+"3_dados10k-1-1-1_SIZE-11000_TD-1000_SS-0.3_TP-416180.arff","1.0","1.0","1.0","1000","415180","0","0"," 15 ","SVM","C_SVC","POLYNOMIAL ","Default(0)","Default(3)","Default(1/n)",,,,
