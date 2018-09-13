@@ -1,0 +1,95 @@
+@relation TrainingInstances_dados10_31
+
+@attribute COSINE_culture numeric
+@attribute JACCARD_culture numeric
+@attribute JARO_culture numeric
+@attribute LEVENSHTEIN_culture numeric
+@attribute QGRAM_culture numeric
+@attribute COSINE_sex numeric
+@attribute JACCARD_sex numeric
+@attribute JARO_sex numeric
+@attribute LEVENSHTEIN_sex numeric
+@attribute QGRAM_sex numeric
+@attribute COSINE_age numeric
+@attribute JACCARD_age numeric
+@attribute JARO_age numeric
+@attribute LEVENSHTEIN_age numeric
+@attribute QGRAM_age numeric
+@attribute COSINE_date_of_birth numeric
+@attribute JACCARD_date_of_birth numeric
+@attribute JARO_date_of_birth numeric
+@attribute LEVENSHTEIN_date_of_birth numeric
+@attribute QGRAM_date_of_birth numeric
+@attribute COSINE_title numeric
+@attribute JACCARD_title numeric
+@attribute JARO_title numeric
+@attribute LEVENSHTEIN_title numeric
+@attribute QGRAM_title numeric
+@attribute COSINE_given_name numeric
+@attribute JACCARD_given_name numeric
+@attribute JARO_given_name numeric
+@attribute LEVENSHTEIN_given_name numeric
+@attribute QGRAM_given_name numeric
+@attribute COSINE_surname numeric
+@attribute JACCARD_surname numeric
+@attribute JARO_surname numeric
+@attribute LEVENSHTEIN_surname numeric
+@attribute QGRAM_surname numeric
+@attribute COSINE_state numeric
+@attribute JACCARD_state numeric
+@attribute JARO_state numeric
+@attribute LEVENSHTEIN_state numeric
+@attribute QGRAM_state numeric
+@attribute COSINE_suburb numeric
+@attribute JACCARD_suburb numeric
+@attribute JARO_suburb numeric
+@attribute LEVENSHTEIN_suburb numeric
+@attribute QGRAM_suburb numeric
+@attribute COSINE_postcode numeric
+@attribute JACCARD_postcode numeric
+@attribute JARO_postcode numeric
+@attribute LEVENSHTEIN_postcode numeric
+@attribute QGRAM_postcode numeric
+@attribute COSINE_street_number numeric
+@attribute JACCARD_street_number numeric
+@attribute JARO_street_number numeric
+@attribute LEVENSHTEIN_street_number numeric
+@attribute QGRAM_street_number numeric
+@attribute COSINE_address_1 numeric
+@attribute JACCARD_address_1 numeric
+@attribute JARO_address_1 numeric
+@attribute LEVENSHTEIN_address_1 numeric
+@attribute QGRAM_address_1 numeric
+@attribute COSINE_address_2 numeric
+@attribute JACCARD_address_2 numeric
+@attribute JARO_address_2 numeric
+@attribute LEVENSHTEIN_address_2 numeric
+@attribute QGRAM_address_2 numeric
+@attribute COSINE_phone_number numeric
+@attribute JACCARD_phone_number numeric
+@attribute JARO_phone_number numeric
+@attribute LEVENSHTEIN_phone_number numeric
+@attribute QGRAM_phone_number numeric
+@attribute COSINE_soc_sec_id numeric
+@attribute JACCARD_soc_sec_id numeric
+@attribute JARO_soc_sec_id numeric
+@attribute LEVENSHTEIN_soc_sec_id numeric
+@attribute QGRAM_soc_sec_id numeric
+@attribute COSINE_blocking_number numeric
+@attribute JACCARD_blocking_number numeric
+@attribute JARO_blocking_number numeric
+@attribute LEVENSHTEIN_blocking_number numeric
+@attribute QGRAM_blocking_number numeric
+@attribute COSINE_family_role numeric
+@attribute JACCARD_family_role numeric
+@attribute JARO_family_role numeric
+@attribute LEVENSHTEIN_family_role numeric
+@attribute QGRAM_family_role numeric
+@attribute resultado {nao-duplicata,duplicata}
+
+@data
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.733333,0.5,0.2,1,1,1,1,1,0,0,0.555556,0.333333,0,0,0,0.447619,0,0,0,0,0,0,0,0,0,0.447222,0.1,0,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.5,0.333333,0.79697,0.363636,0.230769,0,0,0.742857,0.428571,0.222222,1,1,1,1,1,1,1,1,1,1,nao-duplicata
+0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,0,0.866667,0.75,0.4,1,1,1,1,1,1,1,1,1,1,0,0,0.539683,0.142857,0,1,1,1,1,1,0,0,0.442308,0.076923,0,0,0,0,0,0,0,0,0.8,0.333333,0.25,0.408248,0.25,0.652489,0.529412,0.529412,1,1,1,1,1,0,0,0.505556,0.25,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,nao-duplicata
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0.941667,0.75,0.545455,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,duplicata
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0.95,0.875,0.7,1,1,1,1,1,0,0,0.975,0.875,0.736842,0,0,0.911111,0.666667,0.444444,1,1,1,1,1,0.408248,0.25,0.863621,0.733333,0.5,0,0,0.866667,0.75,0.5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0.408248,0.25,0.983333,0.916667,0.814815,0,0,0.942857,0.857143,0.666667,1,1,1,1,1,1,1,1,1,1,duplicata
+1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0.746667,0.375,0.2,1,1,1,1,1,0,0,0.565079,0.285714,0.125,0,0,0.436508,0,0,0,0,0,0,0,0,0,0.563131,0.272727,0,0,0,0.5,0.25,0,0,0,0,0,0,0,0,0.511905,0.0625,0,1,1,1,1,1,0,0,0.561111,0.166667,0,0,0,0.428571,0,0,0,0,0,0,0,1,1,1,1,1,nao-duplicata
