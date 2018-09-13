@@ -9,16 +9,13 @@ import weka.core.SelectedTag;
 
 public class Variables {
 
-	public final static String DATASET_INPUT = "dados10k-12-12-5";
-	
-	public static final boolean FOLDER_CONTROL = true;
-	public static boolean controle = true;
+	public final static String DATASET_INPUT = "dados10k-9-9-5";
 		
 	public static final int PRINTCONTROL = 50000;
 	
 	/* Select Classifier  =====================================================*/
 	//Set which classifier will be used  1- J48 / 2- LibSVM / 3 - MLP
-	public static int CLASSIFIER = 1;   
+	public static int CLASSIFIER = 2;   
     //==========================================================================
 	
 	/* LibSVM Options (CLASSIFIER = 2) ========================================*/
@@ -40,7 +37,7 @@ public class Variables {
 	*/	
 	public static final boolean SVM_VARIABLES = false; // False to keep coef0 and degree default values
 	public static final double coef0 = 0.125; 	//  (Default 0) -- POLY, SIGMOID -- 
-	public static final int degree = 5;		//	(Default 3)  -- POLY -- 
+	public static final int degree = 3;		//	(Default 3)  -- POLY -- 
 	
 	public static final boolean SET_GAMMA = false; // False to keep gamma default value 
 	public static final double gamma = 0.0009765625;  // (Default 1/n atributes) -- POLY, RBF, SIGMOID -- 
@@ -49,6 +46,8 @@ public class Variables {
 	
 	/* Auto Process ===========================================================*/
 	//Get variables from 'dataset' folder
+	public static final boolean FOLDER_CONTROL = true;
+	public static boolean controle = true;
 	//Get variables from 'in' folder
 	public static final boolean GET_VARIABLES = true;
     //==========================================================================
@@ -64,7 +63,7 @@ public class Variables {
 		//Name of the output's file
     public static String TRAININGSET_OUTPUT_FILE = "trainingSet.arff";
     //Sample Size = Essa porcentagem define quantos pares serão selecionado dentro do conjunto de pares positivos
-    public static final double SAMPLE_SIZE = 0.60;
+    public static final double SAMPLE_SIZE = 0.30;
     //Duplicate Size = Porcentagem de quantos pares são inseridos duplicados, ex. datasize = 1000 e dulicate size .10 entao o arquivo tera 1100 registros
     public static final double DUPLICATE_SIZE = 0.1;
     //Quantos registros tem ao todo
