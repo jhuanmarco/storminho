@@ -9,7 +9,6 @@ package edu.uffs.storminho.bolts;
 
 import edu.uffs.storminho.SharedMethods;
 import edu.uffs.storminho.Variables;
-import edu.uffs.storminho.topologies.OutGenerator;
 
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.IRichBolt;
