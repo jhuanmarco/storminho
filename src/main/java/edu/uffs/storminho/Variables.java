@@ -35,11 +35,11 @@ public class Variables {
 		LibSVM.KERNELTYPE_RBF 				// (exp(-gamma*|u-v|^2))  RBF = Radial (Default) 
 		LibSVM.KERNELTYPE_SIGMOID 			// (tanh(gamma*u'*v + coef0))
 	*/	
-	public static final boolean SVM_VARIABLES = false; // False to keep coef0 and degree default values
+	public static final boolean SVM_VARIABLES = true; // False to keep coef0 and degree default values
 	public static final double coef0 = 0.125; 	//  (Default 0) -- POLY, SIGMOID -- 
 	public static final int degree = 3;		//	(Default 3)  -- POLY -- 
 	
-	public static final boolean SET_GAMMA = false; // False to keep gamma default value 
+	public static final boolean SET_GAMMA = true;// False to keep gamma default value 
 	public static final double gamma = 0.0009765625;  // (Default 1/n atributes) -- POLY, RBF, SIGMOID -- 
 
     //==========================================================================
