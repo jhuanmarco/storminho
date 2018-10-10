@@ -2,6 +2,7 @@ package edu.uffs.storminho.topologies;
 
 import edu.uffs.storminho.bolts.LineSaverBolt;
 import edu.uffs.storminho.LineSpout;
+import edu.uffs.storminho.SharedMethods;
 import edu.uffs.storminho.Variables;
 import edu.uffs.storminho.bolts.CounterBolt;
 import edu.uffs.storminho.bolts.ClassifierBolt;
@@ -17,11 +18,17 @@ import redis.clients.jedis.Jedis;
 
 public class MainTopology {
 
+  public static Object terminador = new Object();
+  public static boolean terminar = false;
+  
   public static void main(String[] args) throws Exception {
+	SharedMethods.met("metodo.txt");  
     TopologyBuilder builder = new TopologyBuilder();
     Jedis jedis = new Jedis("localhost");
     jedis.flushAll();
     Variables.COUNT_MODE = false;
+    LocalCluster cluster = null;
+    
 
     builder.setSpout("line-spout", new LineSpout());
     builder.setBolt("line-saver", new LineSaverBolt(), 1).shuffleGrouping("line-spout");
@@ -41,9 +48,20 @@ public class MainTopology {
     }
     else {
       conf.setMaxTaskParallelism(10);
-      LocalCluster cluster = new LocalCluster();
+      cluster = new LocalCluster();
       cluster.submitTopology("MainTopology", conf, builder.createTopology());
       System.out.println("\n\n----------------------------\nFim do processo da topologia\n----------------------------\n");
+    
+    
     }
+    
+    while(!terminar) {
+    	synchronized(MainTopology.terminador) {
+            MainTopology.terminador.wait(); // 6 + 18 = 24
+    	}
+    }
+    
+    cluster.shutdown();
+    System.out.println("TERMINOULALALA");
   }
 }

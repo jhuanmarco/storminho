@@ -13,6 +13,8 @@ package edu.uffs.storminho.bolts;
 import edu.uffs.storminho.SharedMethods;
 import edu.uffs.storminho.Tree;
 import edu.uffs.storminho.Variables;
+import edu.uffs.storminho.topologies.CreateTrainingTopology;
+import edu.uffs.storminho.topologies.MainTopology;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -89,6 +91,7 @@ public class TrainingCreatorBolt extends BaseRichBolt implements IRichBolt {
         boolean writeControl = false;
 
         //só vai passar por esse if aqueles que não foram considerados ainda e aqueles que não são exatamente igual (as redundâncias)
+        if(!(linha1.contains("dup") && linha2.contains("dup")))
         if (set.add(id1 + "_" + id2) && set.add(id2 + "_" + id1) && !id1.equals(id2)) {
         	allPairs++;
          
@@ -133,6 +136,11 @@ public class TrainingCreatorBolt extends BaseRichBolt implements IRichBolt {
         		System.out.println("Terminou");
         		System.out.println("ENTRARAM NO TREINAMENTO:\nPositivos: " + positiveTrainingPairs + " e Negativos: " + negativeTrainingPairs + "\n");
         		
+        		System.out.println("TERMINOULALALA");
+        		CreateTrainingTopology.terminar = true;
+                synchronized(CreateTrainingTopology.terminador) {
+                	CreateTrainingTopology.terminador.notifyAll();
+                }
         		
         		
         		

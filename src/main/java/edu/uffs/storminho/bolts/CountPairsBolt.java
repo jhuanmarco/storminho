@@ -48,6 +48,7 @@ public class CountPairsBolt extends BaseRichBolt implements IRichBolt {
         String id2 = linha2.split(Variables.SPLIT_CHARS)[Variables.FIELD_ID];
 
         //só vai passar por esse if aqueles que não foram considerados ainda e aqueles que não são exatamente igual (as redundâncias)
+        if(!(linha1.contains("dup") && linha2.contains("dup"))) //41067
         if (set.add(id1 + "_" + id2) && set.add(id2 + "_" + id1) && !id1.equals(id2)) {
         	
         	 if (SharedMethods.isDuplicata(id1, id2)) { 

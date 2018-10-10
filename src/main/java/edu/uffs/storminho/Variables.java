@@ -63,7 +63,7 @@ public class Variables {
 		//Name of the output's file
     public static String TRAININGSET_OUTPUT_FILE = "trainingSet.arff";
     //Sample Size = Essa porcentagem define quantos pares serão selecionado dentro do conjunto de pares positivos
-    public static final double SAMPLE_SIZE = 0.30;
+    public static double SAMPLE_SIZE = 0.30;
     //Duplicate Size = Porcentagem de quantos pares são inseridos duplicados, ex. datasize = 1000 e dulicate size .10 entao o arquivo tera 1100 registros
     public static final double DUPLICATE_SIZE = 0.1;
     //Quantos registros tem ao todo

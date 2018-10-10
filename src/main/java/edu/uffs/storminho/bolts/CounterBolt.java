@@ -9,6 +9,7 @@ package edu.uffs.storminho.bolts;
 
 import edu.uffs.storminho.SharedMethods;
 import edu.uffs.storminho.Variables;
+import edu.uffs.storminho.topologies.MainTopology;
 
 import org.apache.storm.topology.OutputFieldsDeclarer;
 import org.apache.storm.topology.IRichBolt;
@@ -40,7 +41,7 @@ public class CounterBolt extends BaseRichBolt implements IRichBolt {
         String id1 = linha1.split(Variables.SPLIT_CHARS)[Variables.FIELD_ID], id2 = linha2.split(Variables.SPLIT_CHARS)[Variables.FIELD_ID]; //IDs das linhas (rec-XX-org/dup)
 
         //Nesse if só vai entrar o par que ainda não foi processado e que não seja a mesma linha
-        //if(!(linha1.contains("dup") && linha2.contains("dup"))) // TODO ASK
+        if(!(linha1.contains("dup") && linha2.contains("dup"))) // TODO ASK
         if (set.add(id1 + "_" + id2) && set.add(id2 + "_" + id1) && !id1.equals(id2)) {
             if (SharedMethods.isDuplicata(id1, id2)) {
                 if (respostaArvore) { vp++; }
@@ -80,7 +81,11 @@ public class CounterBolt extends BaseRichBolt implements IRichBolt {
                 try {
 					SharedMethods.setOutputFile(vp, vn, fp, fn);
 				} catch (IOException e) {}
-                System.out.println("TERMINOU");
+                System.out.println("TERMINOULALALA");
+                MainTopology.terminar = true;
+                synchronized(MainTopology.terminador) {
+                    MainTopology.terminador.notifyAll();
+                }
             
               } 
                 

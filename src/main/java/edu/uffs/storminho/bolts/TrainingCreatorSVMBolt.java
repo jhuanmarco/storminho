@@ -85,6 +85,7 @@ public class TrainingCreatorSVMBolt extends BaseRichBolt implements IRichBolt {
         boolean writeControl = false;
 
         //só vai passar por esse if aqueles que não foram considerados ainda e aqueles que não são exatamente igual (as redundâncias)
+        if(!(linha1.contains("dup") && linha2.contains("dup")))
         if (set.add(id1 + "_" + id2) && set.add(id2 + "_" + id1) && !id1.equals(id2)) {
         	allPairs++;
          

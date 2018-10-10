@@ -14,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.io.PrintStream;
+import java.io.Writer;
+import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -414,5 +416,59 @@ public class SharedMethods {
     	reader = new BufferedReader(new FileReader(new File(path+"numReg")));
     	Variables.TOTAL_REGISTROS = Integer.parseInt(reader.readLine());
         	
+	}
+	
+	public static void porc(String arquivo) throws IOException {
+		File file = new File(arquivo);
+	    FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		
+		BigDecimal lido = new BigDecimal(br.readLine());
+	
+		Variables.SAMPLE_SIZE = lido.doubleValue();
+		
+		BigDecimal inc = new BigDecimal("0.01");
+		
+
+        BigDecimal bigResult = lido.add(inc);
+		Writer wr = null;
+		
+		try {
+			wr = new FileWriter(file);
+			wr.write(bigResult.toString());
+			wr.flush();
+			wr.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void met(String arquivo) throws NumberFormatException, IOException { 
+		File file = new File(arquivo);
+	    FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		
+		int lido = Integer.parseInt(br.readLine());
+		
+		Variables.CLASSIFIER = lido;
+		
+		int saida;
+		
+		if(lido == 1) {
+			saida = 2;
+		} else {
+			saida = 1;
+		}
+		
+		Writer wr = null;
+		
+		try {
+			wr = new FileWriter(file);
+			wr.write(Integer.toString(saida));
+			wr.flush();
+			wr.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
